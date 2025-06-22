@@ -1,0 +1,42 @@
+/* Tombol toggle */
+#toggleSidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px; /* Tersembunyi awalnya */
+    width: 250px;
+    height: 100vh;
+    background-color: #f8d7da;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Aktif: muncul */
+.sidebar.active {
+    left: 0;
+}
+
+/* Konten utama (geser ke kanan saat sidebar aktif) */
+.main-content {
+    margin-left: 0;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar.active ~ .main-content {
+    margin-left: 250px;
+}

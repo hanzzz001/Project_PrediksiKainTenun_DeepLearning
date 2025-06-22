@@ -1,0 +1,294 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background: #f9f9f9;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;
+    /* supaya penuh layar */
+    background: #fbbebe;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.sidebar nav a,
+.sidebar .support a {
+    display: block;
+    padding: 10px 0;
+    color: #333;
+    text-decoration: none;
+}
+
+.sidebar nav a.active {
+    font-weight: bold;
+}
+
+.user-info {
+    font-size: 0.8rem;
+}
+
+/* Main */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filters select {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+/* Prediction Section */
+.prediction-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.upload-box,
+.result-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 40%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-area {
+    border: 2px dashed #ccc;
+    padding: 30px;
+    text-align: center;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.upload-label {
+    cursor: pointer;
+    font-weight: bold;
+    color: #444;
+}
+
+.predict-btn {
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.image-preview {
+    height: 150px;
+    background: #ccc;
+    margin: 15px 0;
+    text-align: center;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+}
+
+.result-info p {
+    margin: 5px 0;
+}
+
+.result-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.btn-outline {
+    padding: 8px 16px;
+    border: 1px solid #333;
+    background: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.btn-filled {
+    padding: 8px 16px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.history-section {
+    background: #fbbebe;
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.history-card {
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    /* agar isi bisa turun ke baris berikutnya jika sempit */
+    gap: 15px;
+    /* jarak antar elemen */
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    /* supaya elemen di atas rata */
+}
+
+.card-image {
+    flex: 0 0 120px;
+    /* ukuran tetap 120px lebar */
+    height: 100px;
+    background: #3c2e2e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-info {
+    flex: 1;
+    /* mengambil sisa lebar */
+    min-width: 200px;
+    /* minimal lebar untuk teks */
+}
+
+.card-info p {
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.card-info strong {
+    font-weight: 700;
+}
+
+/* Jika ingin batasi panjang deskripsi agar tidak terlalu panjang */
+.card-info p.description {
+    max-height: 3.9em;
+    /* kira-kira 3 baris */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/* Style tombol hapus agar rapi */
+.card-info form {
+    margin-top: 10px;
+}
+
+.card-info button {
+    padding: 6px 12px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.card-info button:hover {
+    background-color: #c0392b;
+}
+
+
+.guide-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.guide-section ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.guide-section li {
+    margin-bottom: 10px;
+}
+
+/* Container untuk preview gambar */
+/* Style untuk gambar preview */
+
+
+/* Container untuk image preview */
+/* Container untuk preview gambar */
+/* Container untuk preview gambar */
+.image-preview {
+    width: 100%;
+    /* Kontainer akan mengambil seluruh lebar */
+    height: 300px;
+    /* Tentukan tinggi kontainer sesuai kebutuhan */
+    display: flex;
+    justify-content: center;
+    /* Memusatkan gambar secara horizontal */
+    align-items: center;
+    /* Memusatkan gambar secara vertikal */
+    background-color: #f0f0f0;
+    /* Warna latar belakang */
+    border: 2px dashed #ccc;
+    /* Garis tepi kotak gambar */
+    border-radius: 8px;
+    /* Sudut melengkung */
+    margin-bottom: 20px;
+    /* Jarak ke bawah */
+}
+
+/* CSS untuk gambar preview */
+#preview-image {
+    width: 100%;
+    /* Gambar akan menyesuaikan lebar kontainer */
+    height: 100%;
+    /* Gambar akan menyesuaikan tinggi kontainer */
+    object-fit: contain;
+    /* Menjaga rasio gambar dan menyesuaikan dengan kontainer */
+    display: block;
+    /* Memastikan gambar ditampilkan sebagai block-level */
+    margin: 0 auto;
+    /* Memusatkan gambar */
+}
